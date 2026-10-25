@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Swathi Bhaskar — Full Stack Developer</title>
+<meta name="description" content="Swathi Bhaskar is an entry-level full stack developer building database-driven web applications with Java, Spring Boot, React.js, REST APIs and MySQL.">
+<meta name="author" content="Swathi Bhaskar">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://swathibhaskar.lovable.app/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Swathi Bhaskar — Full Stack Developer">
+<meta property="og:description" content="Entry-level full stack developer building database-driven web applications with Java, Spring Boot, React.js, REST APIs and MySQL.">
+<meta property="og:image" content="assets/swathi-bhaskar.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Swathi Bhaskar — Full Stack Developer">
+<meta name="twitter:description" content="Entry-level full stack developer building database-driven web applications with Java, Spring Boot, React.js, REST APIs and MySQL.">
+
+<link rel="preload" href="assets/fonts/manrope-variable.woff2" as="font" type="font/woff2" crossorigin>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Swathi Bhaskar",
+  "jobTitle": "Full Stack Developer",
+  "email": "mailto:swathibhaskar1118@gmail.com",
+  "telephone": "+91-8220711631",
+  "url": "https://swathibhaskar.lovable.app/",
+  "sameAs": [
+    "https://github.com/Swathi-Bhaskar",
+    "https://www.linkedin.com/in/swathi-bhaskar"
+  ],
+  "alumniOf": "M.P. Nachimuthu M. Jaganathan Engineering College",
+  "knowsAbout": ["Java","Spring Boot","React.js","REST APIs","MySQL","JSP","Servlets","JDBC"]
+}
+</script>
+
+<style>
+/* ============================================================
+   Swathi Bhaskar — developer portfolio
+   Paper + deep pine · Manrope · mono reserved for tech names
+   Fonts are self-hosted: no third-party request, no render block.
+   ============================================================ */
+@font-face{
+  font-family:"Manrope";
+  src:url("assets/fonts/manrope-variable.woff2") format("woff2-variations"),
+      url("assets/fonts/manrope-variable.woff2") format("woff2");
+  font-weight:200 800;
+  font-style:normal;
+  font-display:swap;
+}
+@font-face{
+  font-family:"JetBrains Mono";
+  src:url("assets/fonts/jetbrains-mono-500.woff2") format("woff2");
+  font-weight:500;
+  font-style:normal;
+  font-display:swap;
+}
+:root{
+  --paper:#FAFAF9;
+  --surface:#FFFFFF;
+  --surface-2:#F4F4F1;
+  --ink:#15181C;
+  --ink-2:#555B63;
+  --ink-3:#686E76;
+  --line:#E5E5E0;
+  --line-2:#EFEFEB;
+  --accent:#1F5A4C;
+  --accent-ink:#17473C;
+  --accent-wash:#EDF3F0;
+  --accent-line:#CBDED6;
+  --sans:"Manrope",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --wrap:1140px;
+  --nav-h:68px;
+  --sec-pad:clamp(38px,4.4vw,58px);   /* one source of truth for section rhythm */
+  --block-gap:22px;                   /* heading block -> content below it */
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --shadow:0 1px 2px rgba(21,24,28,.04), 0 12px 32px -18px rgba(21,24,28,.18);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--sans);
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.62;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+::selection{background:var(--accent);color:#fff}
+
+.wrap{width:100%;max-width:var(--wrap);margin-inline:auto;padding-inline:24px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--accent);color:#fff;
+  padding:12px 18px;border-radius:0 0 8px 0;z-index:200;font-weight:600}
+.skip:focus{left:0}
+
+/* ---------- type scale ---------- */
+h1,h2,h3,h4{line-height:1.12;letter-spacing:-.022em;font-weight:800}
+.section-label{
+  font-size:.82rem;font-weight:700;color:var(--accent);
+  display:flex;align-items:center;gap:10px;margin-bottom:8px;
+}
+.section-label::after{content:"";flex:1;height:1px;background:var(--line);max-width:84px}
+.section-title{font-size:clamp(1.45rem,3vw,1.95rem);margin-bottom:8px}
+.section-intro{color:var(--ink-2);max-width:62ch;font-size:1rem}
+
+section{padding-block:var(--sec-pad)}
+section.tint{background:var(--surface-2)}
+/* Cancel the section's own top padding when jumped to, so the HEADING lands
+   just below the nav instead of a screenful of empty padding. Always resolves
+   positive because --sec-pad maxes at 58px and the offset base is 82px. */
+main section[id]{scroll-margin-top:calc(var(--nav-h) + 14px - var(--sec-pad))}
+#top{scroll-margin-top:0}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  padding:13px 22px;border-radius:9px;font-weight:700;font-size:.94rem;
+  border:1px solid transparent;transition:background .2s var(--ease),
+    border-color .2s var(--ease),color .2s var(--ease),transform .2s var(--ease);
+  white-space:nowrap;
+}
+.btn svg{width:17px;height:17px;flex-shrink:0}
+.btn-solid{background:var(--accent);color:#fff}
+.btn-solid:hover{background:var(--accent-ink)}
+.btn-line{border-color:var(--line);background:var(--surface);color:var(--ink)}
+.btn-line:hover{border-color:var(--accent);color:var(--accent)}
+.btn:active{transform:translateY(1px)}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;inset:0 0 auto 0;height:var(--nav-h);z-index:100;
+  background:rgba(250,250,249,.86);backdrop-filter:blur(12px);
+  border-bottom:1px solid transparent;transition:border-color .25s}
+.nav.stuck{border-bottom-color:var(--line)}
+.nav-in{height:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-weight:800;font-size:1.18rem;letter-spacing:-.03em;display:inline-flex;align-items:baseline;gap:0}
+.brand b{color:var(--accent);font-weight:800}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{font-size:.92rem;font-weight:600;color:var(--ink-2);position:relative;padding-block:6px}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;
+  background:var(--accent);transform:scaleX(0);transform-origin:left;
+  transition:transform .25s var(--ease)}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a:hover::after,.nav-links a[aria-current="true"]::after{transform:scaleX(1)}
+.nav-links a[aria-current="true"]{color:var(--ink)}
+.nav-cta{display:inline-flex}
+.burger{display:none;width:42px;height:42px;border:1px solid var(--line);border-radius:9px;
+  background:var(--surface);align-items:center;justify-content:center;flex-direction:column;gap:5px}
+.burger span{display:block;width:17px;height:1.8px;background:var(--ink);border-radius:2px;
+  transition:transform .28s var(--ease),opacity .2s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(6.8px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.8px) rotate(-45deg)}
+
+/* ---------- hero ---------- */
+.hero{padding-top:calc(var(--nav-h) + clamp(22px,3.2vw,38px));padding-bottom:clamp(30px,3.4vw,44px)}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(28px,4vw,54px);align-items:center}
+.hero-role{
+  font-family:var(--mono);font-size:.84rem;font-weight:500;color:var(--accent);
+  background:var(--accent-wash);border:1px solid var(--accent-line);
+  padding:6px 13px;border-radius:100px;display:inline-block;margin-bottom:14px;
+}
+.hero h1{font-size:clamp(2.45rem,6.4vw,4rem);letter-spacing:-.035em;margin-bottom:14px}
+.hero h1 .ln{display:block}
+.hero-lead{font-size:clamp(1rem,1.5vw,1.07rem);color:var(--ink-2);max-width:54ch;margin-bottom:20px}
+.hero-lead strong{color:var(--ink);font-weight:700}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+.hero-soc{display:flex;align-items:center;gap:10px}
+.soc{width:42px;height:42px;border:1px solid var(--line);border-radius:9px;background:var(--surface);
+  display:inline-flex;align-items:center;justify-content:center;color:var(--ink-2);
+  transition:color .2s,border-color .2s,transform .2s var(--ease)}
+.soc svg{width:19px;height:19px}
+.soc:hover{color:var(--accent);border-color:var(--accent-line);transform:translateY(-2px)}
+
+.portrait{position:relative;justify-self:center;width:min(348px,100%)}
+.portrait-frame{position:absolute;inset:16px -16px -16px 16px;border:1px solid var(--accent-line);
+  border-radius:16px;background:var(--accent-wash);z-index:0}
+.portrait img{position:relative;z-index:1;width:100%;border-radius:16px;
+  border:1px solid var(--line);background:var(--surface-2);
+  aspect-ratio:4/5;object-fit:cover;object-position:50% 18%}
+
+/* hero entrance — one orchestrated sequence, nothing else animates on scroll */
+.rise{opacity:0;transform:translateY(16px);animation:rise .62s var(--ease) forwards}
+.rise.d1{animation-delay:.06s}.rise.d2{animation-delay:.12s}
+.rise.d3{animation-delay:.18s}.rise.d4{animation-delay:.24s}.rise.d5{animation-delay:.3s}
+@keyframes rise{to{opacity:1;transform:none}}
+
+/* ---------- facts ---------- */
+.facts{border-block:1px solid var(--line);background:var(--surface)}
+.facts-in{display:grid;grid-template-columns:repeat(4,1fr)}
+.fact{padding:17px 24px;border-left:1px solid var(--line-2)}
+.fact:first-child{border-left:none;padding-left:0}
+.fact dt{font-size:.8rem;color:var(--ink-3);font-weight:600;margin-bottom:3px}
+.fact dd{font-size:1.02rem;font-weight:700;letter-spacing:-.015em}
+
+/* ---------- about ---------- */
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(22px,3.4vw,46px);align-items:start}
+.about-body p{color:var(--ink-2);margin-bottom:11px;max-width:64ch}
+.about-body p:last-child{margin-bottom:0}
+.about-body strong{color:var(--ink);font-weight:700}
+
+/* ---------- skills ---------- */
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:var(--block-gap)}
+.skill-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.skill-card h3{font-size:1rem;font-weight:700;margin-bottom:11px;display:flex;align-items:center;gap:9px}
+.skill-card h3 svg{width:17px;height:17px;color:var(--accent);flex-shrink:0}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{font-family:var(--mono);font-size:.76rem;font-weight:500;color:var(--ink-2);
+  background:var(--surface-2);border:1px solid var(--line);border-radius:6px;padding:4px 9px}
+
+/* ---------- projects ---------- */
+.projects{display:grid;gap:18px;margin-top:var(--block-gap)}
+.project{background:var(--surface);border:1px solid var(--line);border-radius:18px;
+  overflow:hidden;display:grid;grid-template-columns:1.14fr .86fr;
+  box-shadow:var(--shadow)}
+.project-body{padding:clamp(20px,2.4vw,28px)}
+.project h3{font-size:clamp(1.22rem,2.4vw,1.5rem);margin-bottom:6px}
+.project-kind{font-size:.88rem;font-weight:700;color:var(--accent);margin-bottom:12px}
+.project p{color:var(--ink-2);margin-bottom:13px;max-width:56ch;font-size:.97rem}
+.feat{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 18px;margin-bottom:15px}
+.feat li{position:relative;padding-left:19px;font-size:.9rem;color:var(--ink-2)}
+.feat li::before{content:"";position:absolute;left:0;top:.56em;width:6px;height:6px;
+  border-radius:50%;background:var(--accent-line)}
+.project .chips{margin-bottom:16px}
+.project-links{display:flex;gap:10px;flex-wrap:wrap}
+
+/* honest architecture panel — no fabricated screenshots */
+.arch{background:var(--surface-2);border-left:1px solid var(--line);
+  padding:clamp(22px,3vw,30px);display:flex;flex-direction:column;justify-content:center;gap:9px}
+.arch-cap{font-size:.76rem;font-weight:700;color:var(--ink-3);margin-bottom:5px}
+.layer{background:var(--surface);border:1px solid var(--line);border-radius:9px;
+  padding:11px 13px}
+.layer b{display:block;font-size:.88rem;font-weight:700;letter-spacing:-.01em}
+.layer span{font-family:var(--mono);font-size:.72rem;font-weight:500;color:var(--ink-3)}
+.layer.hl{border-color:var(--accent-line);background:var(--accent-wash)}
+.layer.hl b{color:var(--accent-ink)}
+.arch-arrow{height:13px;display:flex;align-items:center;justify-content:center;color:var(--ink-3);flex-shrink:0}
+.arch-arrow svg{width:13px;height:13px}
+
+/* ---------- certifications ---------- */
+.vh{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0 0 0 0);white-space:nowrap;border:0}
+/* Compact, text-only rows. The certificate images stay as standalone assets
+   and open in a new tab on demand — they are never rendered inline. */
+.cert-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:var(--block-gap)}
+.cert-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;
+  padding:15px 17px;display:flex;align-items:center;justify-content:space-between;
+  gap:16px;transition:border-color .22s var(--ease),box-shadow .22s var(--ease)}
+.cert-card:hover{border-color:var(--accent-line);box-shadow:var(--shadow)}
+.cert-main{min-width:0}
+.cert-card h3{font-size:.97rem;font-weight:700;margin-bottom:2px;letter-spacing:-.012em}
+.cert-org{font-size:.86rem;font-weight:600;color:var(--accent);margin-bottom:5px}
+.cert-facts{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 9px;
+  font-size:.79rem;color:var(--ink-3)}
+.cert-facts .sep{color:#B0B5BA;user-select:none}
+.cert-facts .mono{font-family:var(--mono);font-size:.73rem;overflow-wrap:anywhere}
+.cert-view{display:inline-flex;align-items:center;gap:7px;flex-shrink:0;
+  font-size:.84rem;font-weight:700;color:var(--accent);padding:7px 11px;
+  border:1px solid var(--line);border-radius:8px;background:var(--paper);
+  transition:border-color .2s,background .2s,transform .2s var(--ease)}
+.cert-view svg{width:14px;height:14px}
+.cert-view:hover{border-color:var(--accent-line);background:var(--accent-wash);transform:translateY(-1px)}
+
+/* ---------- timeline ---------- */
+.timeline{margin-top:var(--block-gap);position:relative;padding-left:27px}
+.timeline::before{content:"";position:absolute;left:5px;top:9px;bottom:9px;width:1px;background:var(--line)}
+.tl-item{position:relative;padding-bottom:26px}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{content:"";position:absolute;left:-27px;top:7px;width:11px;height:11px;
+  border-radius:50%;background:var(--surface);border:2px solid var(--accent)}
+.tl-head{display:flex;justify-content:space-between;gap:14px;align-items:baseline;flex-wrap:wrap}
+.tl-item h3{font-size:1.06rem;font-weight:700}
+.tl-when{font-family:var(--mono);font-size:.78rem;font-weight:500;color:var(--ink-3);white-space:nowrap}
+.tl-org{font-size:.92rem;color:var(--accent);font-weight:600;margin-bottom:9px}
+.tl-item ul li{position:relative;padding-left:19px;color:var(--ink-2);font-size:.94rem;margin-bottom:5px}
+.tl-item ul li::before{content:"";position:absolute;left:0;top:.6em;width:6px;height:6px;
+  border-radius:50%;background:var(--accent-line)}
+
+/* ---------- education + achievements ---------- */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,3.2vw,40px);align-items:start}
+.edu{background:var(--surface);border:1px solid var(--line);border-radius:14px;
+  padding:16px 18px;margin-top:12px}
+.edu h3{font-size:1rem;font-weight:700;margin-bottom:3px}
+.edu .where{font-size:.92rem;color:var(--ink-2);margin-bottom:9px}
+.edu-meta{display:flex;gap:8px;flex-wrap:wrap}
+.pill{font-family:var(--mono);font-size:.75rem;font-weight:500;padding:4px 9px;border-radius:6px;
+  background:var(--accent-wash);color:var(--accent-ink);border:1px solid var(--accent-line)}
+.pill.plain{background:var(--surface-2);color:var(--ink-2);border-color:var(--line)}
+.ach{background:var(--surface);border:1px solid var(--line);border-radius:14px;
+  padding:15px 18px;margin-top:12px;display:flex;gap:14px;align-items:flex-start}
+.ach-ic{width:38px;height:38px;border-radius:10px;background:var(--accent-wash);
+  border:1px solid var(--accent-line);color:var(--accent);flex-shrink:0;
+  display:flex;align-items:center;justify-content:center}
+.ach-ic svg{width:18px;height:18px}
+.ach b{display:block;font-size:1rem;font-weight:700;margin-bottom:2px}
+.ach span{font-size:.92rem;color:var(--ink-2)}
+
+/* ---------- contact ---------- */
+.contact-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;
+  padding:clamp(24px,3vw,36px);text-align:center;box-shadow:var(--shadow)}
+.contact-card h2{font-size:clamp(1.5rem,3.2vw,2.05rem);margin-bottom:10px}
+.contact-card>p{color:var(--ink-2);max-width:50ch;margin:0 auto 20px}
+.contact-rows{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;
+  max-width:620px;margin:0 auto 20px;text-align:left}
+.crow{display:flex;align-items:center;gap:13px;padding:14px 16px;border:1px solid var(--line);
+  border-radius:11px;background:var(--paper);transition:border-color .2s,transform .2s var(--ease)}
+a.crow:hover{border-color:var(--accent-line);transform:translateY(-2px)}
+.crow-ic{width:36px;height:36px;border-radius:9px;background:var(--accent-wash);
+  border:1px solid var(--accent-line);color:var(--accent);flex-shrink:0;
+  display:flex;align-items:center;justify-content:center}
+.crow-ic svg{width:17px;height:17px}
+.crow small{display:block;font-size:.76rem;color:var(--ink-3);font-weight:600}
+.crow b{font-size:.92rem;font-weight:700;overflow-wrap:anywhere}
+
+/* ---------- footer ---------- */
+.footer{border-top:1px solid var(--line);padding-block:26px;background:var(--surface)}
+.footer-in{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.footer p{font-size:.88rem;color:var(--ink-3)}
+.footer-links{display:flex;gap:18px}
+.footer-links a{font-size:.88rem;color:var(--ink-2);font-weight:600}
+.footer-links a:hover{color:var(--accent)}
+
+/* ---------- responsive ---------- */
+@media (max-width:1000px){
+  .hero-grid{grid-template-columns:1fr;gap:38px}
+  .portrait{order:-1;width:min(290px,76%)}
+  .project{grid-template-columns:1fr}
+  .arch{border-left:none;border-top:1px solid var(--line)}
+  .about-grid{grid-template-columns:1fr;gap:22px}
+  .skills-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:860px){
+  .nav-links,.nav-cta{display:none}
+  .burger{display:flex}
+  .nav-links.open{
+    display:flex;position:fixed;top:var(--nav-h);left:0;right:0;
+    flex-direction:column;align-items:stretch;gap:0;
+    background:var(--paper);border-bottom:1px solid var(--line);
+    padding:8px 24px 20px;box-shadow:var(--shadow);max-height:calc(100dvh - var(--nav-h));
+    overflow-y:auto;
+  }
+  .nav-links.open a{padding:14px 0;border-bottom:1px solid var(--line-2);font-size:1rem;color:var(--ink)}
+  .nav-links.open a::after{display:none}
+  .nav-links.open .nav-cta-m{display:inline-flex;margin-top:16px;justify-content:center}
+  .facts-in{grid-template-columns:repeat(2,1fr)}
+  .fact{padding:18px 20px;border-left:1px solid var(--line-2)}
+  .fact:nth-child(odd){border-left:none;padding-left:0}
+  .fact:nth-child(n+3){border-top:1px solid var(--line-2)}
+  .two-col{grid-template-columns:1fr;gap:26px}
+}
+@media (max-width:620px){
+  .skills-grid{grid-template-columns:1fr}
+  .cert-grid{grid-template-columns:1fr}
+  .feat{grid-template-columns:1fr}
+  .contact-rows{grid-template-columns:1fr}
+  .hero-cta .btn{flex:1 1 auto;min-width:168px}
+  .tl-head{gap:4px}
+}
+@media (max-width:420px){
+  /* stack the row so neither the title nor the link gets squeezed */
+  .cert-card{flex-direction:column;align-items:stretch;gap:11px}
+  .cert-view{align-self:flex-start}
+}
+@media (max-width:380px){
+  .wrap{padding-inline:18px}
+  .hero h1{font-size:2.25rem}
+  .facts-in{grid-template-columns:1fr}
+  .fact{border-left:none;padding-left:0;padding-block:14px}
+  .fact:nth-child(n+2){border-top:1px solid var(--line-2)}
+  .hero-cta .btn{width:100%}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;scroll-behavior:auto !important}
+  .rise{opacity:1;transform:none}
+}
+@media print{
+  .nav,.burger,.hero-cta,.contact-rows{display:none}
+  body{background:#fff}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="#top" class="brand" aria-label="Swathi Bhaskar, home">Swathi<b>.</b></a>
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-solid nav-cta-m" href="assets/Swathi_Bhaskar_Resume.pdf" target="_blank" rel="noopener noreferrer" style="display:none">View resume</a>
+    </nav>
+    <a class="btn btn-solid nav-cta" href="assets/Swathi_Bhaskar_Resume.pdf" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+      Resume
+    </a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <span class="hero-role rise">Full Stack Developer</span>
+      <h1 class="rise d1"><span class="ln">Swathi</span><span class="ln">Bhaskar</span></h1>
+      <p class="hero-lead rise d2">
+        I build database-driven web applications end to end — <strong>Java</strong> and
+        <strong>Spring Boot</strong> on the back end, <strong>React.js</strong> on the front,
+        <strong>REST APIs</strong> connecting them and <strong>MySQL</strong> underneath.
+        Two full-stack projects built, and a seven-month Java full stack internship behind me.
+      </p>
+      <div class="hero-cta rise d3">
+        <a class="btn btn-solid" href="#projects">View my projects</a>
+        <a class="btn btn-line" href="assets/Swathi_Bhaskar_Resume.pdf" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+          View resume
+        </a>
+      </div>
+      <div class="hero-soc rise d4">
+        <a class="soc" href="https://github.com/Swathi-Bhaskar" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49v-1.7c-2.78.62-3.37-1.37-3.37-1.37-.46-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05a9.4 9.4 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9v2.81c0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
+        </a>
+        <a class="soc" href="https://www.linkedin.com/in/swathi-bhaskar" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 5a2 2 0 1 1-4-.02 2 2 0 0 1 4 .02zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.68-2.91v-1.68z"/></svg>
+        </a>
+        <a class="soc" href="mailto:swathibhaskar1118@gmail.com" aria-label="Send an email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="portrait rise d2">
+      <div class="portrait-frame" aria-hidden="true"></div>
+      <picture>
+        <source srcset="assets/swathi-bhaskar.webp" type="image/webp">
+        <img src="assets/swathi-bhaskar.jpg" width="880" height="1100"
+             alt="Portrait of Swathi Bhaskar, full stack developer" fetchpriority="high" decoding="async">
+      </picture>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FACTS ============ -->
+<section class="facts" style="padding-block:0" aria-label="At a glance">
+  <div class="wrap">
+    <dl class="facts-in">
+      <div class="fact"><dt>Degree</dt><dd>B.Tech IT — CGPA 8.0</dd></div>
+      <div class="fact"><dt>Internships</dt><dd>2 completed</dd></div>
+      <div class="fact"><dt>Full-stack projects</dt><dd>2 built</dd></div>
+      <div class="fact"><dt>Coding problems solved</dt><dd>200+</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="wrap about-grid">
+    <div>
+      <p class="section-label">About</p>
+      <h2 class="section-title">Backend logic, frontend polish, and the wiring between them</h2>
+    </div>
+    <div class="about-body">
+      <p>I'm an entry-level full stack developer and a 2026 B.Tech Information Technology graduate. Most of my work so far has been <strong>building complete applications rather than isolated features</strong> — designing the database, writing the server-side logic, exposing it through APIs, and building the interface that consumes them.</p>
+      <p>On the back end I work with <strong>Java and Spring Boot</strong>, writing REST APIs and connecting them to MySQL. I've also built a full application the earlier way — <strong>JSP, Servlets and JDBC</strong> following MVC and DAO patterns — which gave me a clear picture of what frameworks like Spring actually do for you. On the front end I use <strong>React.js</strong> with JavaScript, HTML5 and CSS3.</p>
+      <p>Alongside project work I keep my fundamentals sharp: <strong>object-oriented programming, data structures and algorithms, and DBMS</strong>, with over 200 problems solved across LeetCode, GeeksforGeeks and HackerRank. I'm looking for a full stack, Java or software developer role where I can keep building and learning from a strong engineering team.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section id="skills" class="tint">
+  <div class="wrap">
+    <p class="section-label">Technical skills</p>
+    <h2 class="section-title">What I work with</h2>
+    <p class="section-intro">The languages, frameworks and tools I've used across my projects and internships.</p>
+
+    <div class="skills-grid">
+      <article class="skill-card">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg>Programming languages</h3>
+        <div class="chips"><span class="chip">Java</span><span class="chip">JavaScript (ES6+)</span><span class="chip">Python</span><span class="chip">SQL</span></div>
+      </article>
+
+      <article class="skill-card">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Frontend</h3>
+        <div class="chips"><span class="chip">React.js</span><span class="chip">JavaScript</span><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">Responsive design</span></div>
+      </article>
+
+      <article class="skill-card">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><path d="M6 6h.01M6 18h.01"/></svg>Backend</h3>
+        <div class="chips"><span class="chip">Java</span><span class="chip">Spring Boot</span><span class="chip">REST APIs</span><span class="chip">JSP</span><span class="chip">Servlets</span><span class="chip">JDBC</span><span class="chip">MVC</span><span class="chip">DAO</span></div>
+      </article>
+
+      <article class="skill-card">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/></svg>Databases</h3>
+        <div class="chips"><span class="chip">MySQL</span><span class="chip">SQL</span><span class="chip">Relational design</span><span class="chip">CRUD operations</span></div>
+      </article>
+
+      <article class="skill-card">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 2.5 1.5 4 2 5.5.3.9.5 1.8.5 2.5h9c0-.7.2-1.6.5-2.5.5-1.5 2-3 2-5.5a7 7 0 0 0-7-7z"/><path d="M9 21h6"/></svg>Core concepts</h3>
+        <div class="chips"><span class="chip">OOP</span><span class="chip">Data structures</span><span class="chip">Algorithms</span><span class="chip">DBMS</span><span class="chip">Collections</span><span class="chip">Exception handling</span><span class="chip">Multithreading</span></div>
+      </article>
+
+      <article class="skill-card">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>Tools</h3>
+        <div class="chips"><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">IntelliJ IDEA</span><span class="chip">Eclipse</span><span class="chip">VS Code</span><span class="chip">Apache Tomcat</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="projects">
+  <div class="wrap">
+    <p class="section-label">Projects</p>
+    <h2 class="section-title">Things I've built</h2>
+    <p class="section-intro">Two full-stack applications, each built from the database up to the interface.</p>
+
+    <div class="projects">
+
+      <article class="project">
+        <div class="project-body">
+          <h3>Smart Recruitment &amp; ATS Platform</h3>
+          <p class="project-kind">Applicant tracking system · React.js + Spring Boot</p>
+          <p>A recruitment platform for managing job postings, candidate profiles and applications end to end. React.js on the front, a Spring Boot REST API behind it, and MySQL holding candidate, job and application data.</p>
+          <ul class="feat">
+            <li>Job posting management</li>
+            <li>Candidate profiles</li>
+            <li>Application management</li>
+            <li>Candidate tracking</li>
+            <li>Resume management</li>
+            <li>Application status tracking</li>
+            <li>Search and filtering</li>
+            <li>Responsive React interface</li>
+          </ul>
+          <div class="chips">
+            <span class="chip">React.js</span><span class="chip">Spring Boot</span><span class="chip">REST APIs</span><span class="chip">MySQL</span><span class="chip">Java</span>
+          </div>
+          <div class="project-links">
+            <a class="btn btn-line" href="https://github.com/Swathi-Bhaskar" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49v-1.7c-2.78.62-3.37-1.37-3.37-1.37-.46-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05a9.4 9.4 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9v2.81c0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
+              View on GitHub
+            </a>
+          </div>
+        </div>
+        <div class="arch" aria-label="Architecture: React front end calling a Spring Boot REST API backed by MySQL">
+          <p class="arch-cap">How it's put together</p>
+          <div class="layer hl"><b>React.js client</b><span>components · search &amp; filter</span></div>
+          <div class="arch-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></div>
+          <div class="layer"><b>Spring Boot REST API</b><span>controllers · services</span></div>
+          <div class="arch-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></div>
+          <div class="layer"><b>MySQL</b><span>candidates · jobs · applications</span></div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project-body">
+          <h3>Foodian — Food Delivery Web Application</h3>
+          <p class="project-kind">Full-stack Java web application</p>
+          <p>A food delivery application covering the whole ordering journey, from signing in and browsing restaurants through to checkout. Built with Java Servlets and JSP following MVC and DAO patterns, with an admin module and deployment on Apache Tomcat.</p>
+          <ul class="feat">
+            <li>User authentication</li>
+            <li>Restaurant browsing</li>
+            <li>Menu management</li>
+            <li>Shopping cart</li>
+            <li>Checkout</li>
+            <li>Order placement</li>
+            <li>Admin module</li>
+            <li>CRUD across all entities</li>
+          </ul>
+          <div class="chips">
+            <span class="chip">Java</span><span class="chip">JSP</span><span class="chip">Servlets</span><span class="chip">JDBC</span><span class="chip">MySQL</span><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">JavaScript</span>
+          </div>
+          <div class="project-links">
+            <a class="btn btn-line" href="https://github.com/Swathi-Bhaskar/Foodian" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49v-1.7c-2.78.62-3.37-1.37-3.37-1.37-.46-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05a9.4 9.4 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9v2.81c0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
+              View on GitHub
+            </a>
+          </div>
+        </div>
+        <div class="arch" aria-label="Architecture: JSP views, Servlet controllers, DAO layer and MySQL, deployed on Apache Tomcat">
+          <p class="arch-cap">How it's put together</p>
+          <div class="layer hl"><b>JSP views</b><span>browse · cart · checkout</span></div>
+          <div class="arch-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></div>
+          <div class="layer"><b>Servlet controllers</b><span>MVC · request handling</span></div>
+          <div class="arch-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></div>
+          <div class="layer"><b>DAO layer · JDBC</b><span>data access</span></div>
+          <div class="arch-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></div>
+          <div class="layer"><b>MySQL</b><span>users · restaurants · menus · orders</span></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ CERTIFICATIONS ============ -->
+<section id="certifications" class="tint">
+  <div class="wrap">
+    <p class="section-label">Certifications &amp; training</p>
+    <h2 class="section-title">Certifications &amp; Training</h2>
+    <p class="section-intro">Each opens the original certificate in a new tab.</p>
+
+    <div class="cert-grid">
+
+      <article class="cert-card">
+        <div class="cert-main">
+          <h3>SQL (Basic)</h3>
+          <p class="cert-org">HackerRank</p>
+          <p class="cert-facts"><span>21 February 2026</span><span class="sep" aria-hidden="true">·</span><span class="mono">ID 00152C739150</span></p>
+        </div>
+        <a class="cert-view" href="assets/certificates/hackerrank-sql-basic.png" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+          View certificate<span class="vh"> — SQL (Basic), HackerRank</span>
+        </a>
+      </article>
+
+      <article class="cert-card">
+        <div class="cert-main">
+          <h3>Full Stack Web Development</h3>
+          <p class="cert-org">TAP Academy</p>
+          <p class="cert-facts"><span>22 August 2026</span><span class="sep" aria-hidden="true">·</span><span class="mono">No. TA-FS-260313</span></p>
+        </div>
+        <a class="cert-view" href="assets/certificates/tap-academy-full-stack.jpg" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+          View certificate<span class="vh"> — Full Stack Web Development, TAP Academy</span>
+        </a>
+      </article>
+
+      <article class="cert-card">
+        <div class="cert-main">
+          <h3>Python with Django — Internship Training</h3>
+          <p class="cert-org">Gateway Software Solutions</p>
+          <p class="cert-facts"><span>3 – 19 February 2025</span></p>
+        </div>
+        <a class="cert-view" href="assets/certificates/gateway-python-django.jpg" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+          View certificate<span class="vh"> — Python with Django, Gateway Software Solutions</span>
+        </a>
+      </article>
+
+      <article class="cert-card">
+        <div class="cert-main">
+          <h3>C, C++, Python with Data Science &amp; Java</h3>
+          <p class="cert-org">Code Galatta — COGTIS Technologies Pvt. Ltd.</p>
+          <p class="cert-facts"><span>31 May 2023</span><span class="sep" aria-hidden="true">·</span><span class="mono">No. 12966</span></p>
+        </div>
+        <a class="cert-view" href="assets/certificates/code-galatta-programming.jpg" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+          View certificate<span class="vh"> — C, C++, Python with Data Science and Java, Code Galatta</span>
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section id="experience">
+  <div class="wrap">
+    <p class="section-label">Internship experience</p>
+    <h2 class="section-title">Where I've trained</h2>
+
+    <div class="timeline">
+      <article class="tl-item">
+        <div class="tl-head">
+          <h3>Java Full Stack Web Development Intern</h3>
+          <span class="tl-when">Jan 2026 – Jul 2026</span>
+        </div>
+        <p class="tl-org">TAP Academy, India</p>
+        <ul>
+          <li>Developed full-stack applications using Java, Spring Boot, React.js, REST APIs, MySQL, HTML5, CSS3 and JavaScript.</li>
+          <li>Worked on backend services, database integration and frontend-backend connectivity, implementing CRUD operations and debugging application issues.</li>
+          <li>Managed source code and collaborated through Git-based development workflows.</li>
+        </ul>
+      </article>
+
+      <article class="tl-item">
+        <div class="tl-head">
+          <h3>Python Development Intern</h3>
+          <span class="tl-when">Jan 2025 – Feb 2025</span>
+        </div>
+        <p class="tl-org">Gateway Software Solutions, Coimbatore, India</p>
+        <ul>
+          <li>Contributed to backend development and database operations as part of software application development.</li>
+          <li>Applied Python programming and SQL to application development tasks, and gained practical exposure to software development practices.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EDUCATION + ACHIEVEMENTS ============ -->
+<section id="education" class="tint">
+  <div class="wrap two-col">
+    <div>
+      <p class="section-label">Education</p>
+      <h2 class="section-title">Academic background</h2>
+
+      <div class="edu">
+        <h3>B.Tech in Information Technology</h3>
+        <p class="where">M.P. Nachimuthu M. Jaganathan Engineering College</p>
+        <div class="edu-meta"><span class="pill">CGPA 8.0</span><span class="pill plain">2022 – 2026</span></div>
+      </div>
+
+      <div class="edu">
+        <h3>Higher Secondary Certificate</h3>
+        <p class="where">Bethel Matric Higher Secondary School</p>
+        <div class="edu-meta"><span class="pill">90%</span><span class="pill plain">2021 – 2022</span></div>
+      </div>
+    </div>
+
+    <div>
+      <p class="section-label">Achievements</p>
+      <h2 class="section-title">Problem solving</h2>
+
+      <div class="ach">
+        <span class="ach-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 9.5 8.5 3 9.5l5 4.5-1.5 6.5L12 17l5.5 3.5L16 14l5-4.5-6.5-1z"/></svg></span>
+        <div>
+          <b>100+ problems on LeetCode and GeeksforGeeks</b>
+          <span>Strengthening data structures and problem-solving skills.</span>
+        </div>
+      </div>
+
+      <div class="ach">
+        <span class="ach-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M6 4h12v5a6 6 0 0 1-12 0z"/><path d="M12 15v6M9 21h6"/></svg></span>
+        <div>
+          <b>100+ problems on HackerRank</b>
+          <span>Improving algorithmic thinking and programming efficiency.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-card">
+      <h2>Let's talk</h2>
+      <p>I'm looking for full stack, Java or software developer roles. The quickest way to reach me is email or LinkedIn.</p>
+
+      <div class="contact-rows">
+        <a class="crow" href="mailto:swathibhaskar1118@gmail.com">
+          <span class="crow-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>
+          <span><small>Email</small><b>swathibhaskar1118@gmail.com</b></span>
+        </a>
+        <a class="crow" href="tel:+918220711631">
+          <span class="crow-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+          <span><small>Phone</small><b>+91 8220711631</b></span>
+        </a>
+        <a class="crow" href="https://www.linkedin.com/in/swathi-bhaskar" target="_blank" rel="noopener noreferrer">
+          <span class="crow-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 1 1-4-.02 2 2 0 0 1 4 .02zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.68-2.91v-1.68z"/></svg></span>
+          <span><small>LinkedIn</small><b>in/swathi-bhaskar</b></span>
+        </a>
+        <a class="crow" href="https://github.com/Swathi-Bhaskar" target="_blank" rel="noopener noreferrer">
+          <span class="crow-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49v-1.7c-2.78.62-3.37-1.37-3.37-1.37-.46-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05a9.4 9.4 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9v2.81c0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg></span>
+          <span><small>GitHub</small><b>Swathi-Bhaskar</b></span>
+        </a>
+      </div>
+
+      <a class="btn btn-solid" href="assets/Swathi_Bhaskar_Resume.pdf" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+        View my resume
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-in">
+    <p>© <span id="yr">2026</span> Swathi Bhaskar</p>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="https://github.com/Swathi-Bhaskar" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/swathi-bhaskar" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="mailto:swathibhaskar1118@gmail.com">Email</a>
+      <a href="assets/Swathi_Bhaskar_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+  var nav = document.getElementById("nav");
+  var burger = document.getElementById("burger");
+  var links = document.getElementById("navLinks");
+
+  /* hairline appears once the page has moved */
+  function onScroll() { nav.classList.toggle("stuck", window.scrollY > 8); }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  /* mobile menu */
+  function setMenu(open) {
+    links.classList.toggle("open", open);
+    burger.setAttribute("aria-expanded", String(open));
+    burger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    var cta = links.querySelector(".nav-cta-m");
+    if (cta) cta.style.display = open ? "inline-flex" : "none";
+  }
+  burger.addEventListener("click", function () {
+    setMenu(burger.getAttribute("aria-expanded") !== "true");
+  });
+  links.addEventListener("click", function (e) {
+    if (e.target.closest("a")) setMenu(false);
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && burger.getAttribute("aria-expanded") === "true") {
+      setMenu(false); burger.focus();
+    }
+  });
+  window.addEventListener("resize", function () {
+    if (window.innerWidth > 860) setMenu(false);
+  });
+
+  /* mark the section currently in view */
+  var sections = Array.prototype.slice.call(
+    document.querySelectorAll("main section[id]")
+  );
+  var navAnchors = Array.prototype.slice.call(links.querySelectorAll('a[href^="#"]'));
+  if ("IntersectionObserver" in window && sections.length) {
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        navAnchors.forEach(function (a) {
+          var on = a.getAttribute("href") === "#" + entry.target.id;
+          if (on) { a.setAttribute("aria-current", "true"); }
+          else { a.removeAttribute("aria-current"); }
+        });
+      });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    sections.forEach(function (s) { spy.observe(s); });
+  }
+
+  document.getElementById("yr").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
